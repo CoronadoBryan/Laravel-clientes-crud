@@ -24,6 +24,9 @@ const initialValues = {
     end_date: client.value.end_date ,
     avatar: client.value.avatar,
     privacity: client.value.privacity,
+    usuario: client.value.usuario,
+    observaciones: client.value.observaciones,
+    status: client.value.status,
 };
 
 

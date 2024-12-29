@@ -16,6 +16,9 @@ const initialValues = {
     start_date: new Date(), // Fecha actual por defecto
     end_date: null, // Sin fecha seleccionada
     avatar: null,
+    status: "pending",
+    usuario: "",
+    observaciones: "",
     privacity: "public",
 };
 
@@ -152,6 +155,37 @@ const submit=()=>{
                                 class="mt-2"
                                 :message="form.errors.avatar"
                             />
+                        </div>
+                        <div>
+                            <InputLabel for="status" value="Estado" />
+                            <select v-model="form.status" name="status" id="status" class="mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                <option value="active">Activo</option>
+                                <option value="inactive">Inactivo</option>
+                                <option value="pending">Pendiente</option>
+                            </select>
+                            <InputError class="mt-2" :message="form.errors.status" />
+                        </div>
+                        <div>
+                            <InputLabel for="usuario" value="Usuario" />
+                            <TextInput
+                                id="usuario"
+                                type="text"
+                                class="mt-1 block w-full"
+                                v-model="form.usuario"
+                                placeholder="Nombre de usuario"
+                            />
+                            <InputError class="mt-2" :message="form.errors.usuario" />
+                        </div>
+                        <div>
+                            <InputLabel for="observaciones" value="Observaciones" />
+                            <TextInput
+                                id="observaciones"
+                                type="text"
+                                class="mt-1 block w-full"
+                                v-model="form.observaciones"
+                                placeholder="Observaciones"
+                            />
+                            <InputError class="mt-2" :message="form.errors.observaciones" />
                         </div>
                         <div>
                             <InputLabel for="privacity" value="Privacidad" />

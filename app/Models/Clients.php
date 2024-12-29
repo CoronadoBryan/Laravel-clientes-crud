@@ -14,6 +14,9 @@ class Clients extends Model
         'end_date',
         'avatar',
         'privacity',
+        'status',
+        'usuario',
+        'observaciones',
         'user_id'
     ];
 }

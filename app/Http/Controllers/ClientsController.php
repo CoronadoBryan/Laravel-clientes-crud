@@ -42,10 +42,12 @@ class ClientsController extends Controller
             $file = $request->file('avatar');
             $routeName = $file->store('avatars',['disk'=>'public']);
             $data['avatar'] = $routeName;
+            
         }
         $data['user_id'] = Auth::user()->id;
 
         Clients::create($data);
+
 
         return to_route('client.index');
     }

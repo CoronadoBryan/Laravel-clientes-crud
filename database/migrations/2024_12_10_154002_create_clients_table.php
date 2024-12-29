@@ -20,6 +20,9 @@ return new class extends Migration
             $table->date('end_date')->nullable();
             $table->string('avatar')->nullable();
             $table->enum('privacity', ['public', 'private'])->default('private');
+            $table->enum('status',['active', 'inactive', 'pending']) -> default('inactive');
+            $table->string('usuario')->nullable();
+            $table->string('observaciones')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
